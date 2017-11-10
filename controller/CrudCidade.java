@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.cidade.data.crud;
+package br.cidade.controller;
 
 import br.principal.data.crud.EMNames;
 import br.principal.data.crud.AbstractCrud;
-import br.cidade.data.entity.Cidade;
+import br.cidade.model.Cidade;
 import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 

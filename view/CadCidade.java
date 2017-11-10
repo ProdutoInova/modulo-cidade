@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.cidade.gui;
+package br.cidade.view;
 
 /**
  *
@@ -113,18 +113,18 @@ public class CadCidade extends javax.swing.JInternalFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        br.cidade.data.entity.Cidade cid= new br.cidade.data.entity.Cidade();
+        br.cidade.model.Cidade cid= new br.cidade.model.Cidade();
         int cod = Integer.parseInt(txtCod.getText());
         String nome = txtNome.getText();
         cid.setCodigo(cod);
         cid.setNome(nome);
-        new br.cidade.data.crud.CrudCidade().persist(cid);
+        new br.cidade.controller.CrudCidade().persist(cid);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String lista="";
-        for (br.cidade.data.entity.Cidade cid : new br.cidade.data.crud.CrudCidade().getAll()) {
+        for (br.cidade.model.Cidade cid : new br.cidade.controller.CrudCidade().getAll()) {
             lista = lista +cid.getCodigo() + " | " + cid.getNome()+ "\n";
         }
         jTextArea1.setText(lista);
